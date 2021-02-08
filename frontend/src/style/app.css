@@ -1,0 +1,21 @@
+html,
+body {
+    height: 100%;
+}
+
+.navbar {
+    height: 5vh;
+}
+
+.fill,
+main {
+    height: 95vh;
+}
+
+.min-h-100 {
+    min-height: 100%;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

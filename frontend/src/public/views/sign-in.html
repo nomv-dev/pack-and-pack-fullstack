@@ -1,0 +1,27 @@
+<div class="container min-h-100" ng-show="!$root.user">
+    <div class="row fill">
+        <div class="col-md-6 col-sm-12 m-auto">
+            <div class="border border-dark rounded p-5 bg-light">
+                <h2 class="text-center mb-4">Iniciar sesión</h2>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Correo electrónico" ng-model="app.user.email"
+                        autocomplete="email" ng-class="app.errors.email ? 'is-invalid' : ''" />
+                    <div class="invalid-feedback">{{ app.errors.email }}</div>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Constraseña" ng-model="app.user.password"
+                        ng-class="app.errors.password ? 'is-invalid' : ''" />
+                    <div class="invalid-feedback">{{ app.errors.password }}</div>
+                </div>
+                <div class="form-group mt-4">
+                    <button type="button" class="btn btn-primary btn-block" ng-click="app.signIn()">
+                        <em class="fas fa-sign-in-alt"></em>&emsp;Iniciar sesión
+                    </button>
+                </div>
+                <p class="text-center">
+                    <a href="#!/user/register" class="btn btn-link">Registrarse</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

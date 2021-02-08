@@ -1,0 +1,74 @@
+<div class="container pt-5">
+    <h1>Registro de usuario</h1>
+    <div class="card mt-5">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" class="form-control" id="name" placeholder="Nombre"
+                    ng-class="app.errors.name ? 'is-invalid' : ''" ng-model="app.user.name" />
+                <div class="invalid-feedback">{{ app.errors.name }}</div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="email">Correo electrónico</label>
+                    <input type="text" class="form-control" id="email" placeholder="Correo electrónico"
+                        ng-class="app.errors.email ? 'is-invalid' : ''" ng-model="app.user.email" />
+                    <div class="invalid-feedback">{{ app.errors.email }}</div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="telephone">Teléfono</label>
+                    <input type="number" class="form-control" id="telephone" placeholder="Teléfono"
+                        ng-class="app.errors.telephone ? 'is-invalid' : ''" ng-model="app.user.telephone" />
+                    <div class="invalid-feedback">{{ app.errors.telephone }}</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="password">Constraseña</label>
+                    <input type="password" class="form-control" id="password" placeholder="Contraseña"
+                        ng-class="app.errors.password ? 'is-invalid' : ''" ng-model="app.user.password" />
+                    <div class="invalid-feedback">{{ app.errors.password }}</div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="password-confirm">Confirmar constraseña</label>
+                    <input type="password" class="form-control" id="password-confirm"
+                        placeholder="Confirmar constraseña" ng-class="app.errors.passwordConfirm ? 'is-invalid' : ''"
+                        ng-model="app.user.passwordConfirm" />
+                    <div class="invalid-feedback">{{ app.errors.passwordConfirm }}</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="age">Edad</label>
+                    <input type="number" class="form-control" id="age" placeholder="Edad"
+                        ng-class="app.errors.age ? 'is-invalid' : ''" ng-model="app.user.age" />
+                    <div class="invalid-feedback">{{ app.errors.age }}</div>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="gender">Género</label>
+                    <select id="gender" class="form-control" ng-class="app.errors.gender ? 'is-invalid' : ''"
+                        ng-model="app.user.gender">
+                        <option value="" selected>Seleccione</option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
+                    <div class="invalid-feedback">{{ app.errors.gender }}</div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="hobby">Pasatiempo</label>
+                    <input type="text" class="form-control" id="hobby" placeholder="Pasatiempo"
+                        ng-class="app.errors.hobby ? 'is-invalid' : ''" ng-model="app.user.hobby" />
+                    <div class="invalid-feedback">{{ app.errors.hobby }}</div>
+                </div>
+            </div>
+            <div class="text-right">
+                <button type="button" class="btn btn-danger" ng-click="app.clear()">
+                    <em class="fas fa-eraser"></em>&emsp;Limpiar
+                </button>
+                <button type="button" class="btn btn-primary" ng-click="app.save()">
+                    <em class="fas fa-save"></em>&emsp;Registrar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

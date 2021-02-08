@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#!/user/search">
+        <img src="/img/logo.svg" width="139.53488372093" height="40" alt="Pack&Pack">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            <li class="nav-item" ng-class="$root.currentLocation === '/user/search' ? 'active' : ''" ng-show="$root.user">
+                <a class="nav-link" href="#!/user/search">Consultar</a>
+            </li>
+            <li class="nav-item" ng-class="$root.currentLocation === '/user/register' ? 'active' : ''">
+                <a class="nav-link" href="#!/user/register">Registrar</a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link disabled">|</a>
+            </li>
+            <li class="nav-item dropdown" ng-show="$root.user">
+                <a class="nav-link dropdown-toggle font-weight-bold" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <em class="far fa-user-circle"></em>&emsp;{{ $root.user.name }}
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item disabled text-center text-muted">
+                        {{ $root.user.name }}
+                        <br>
+                        ({{ $root.user.email }})
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#" ng-click="app.logOut()">
+                        <em class="fas fa-power-off"></em>&nbsp;Cerrar sesión
+                    </a>
+                </div>
+            </li>
+            <li class="nav-item mx-2 font-weight-bold" ng-show="!$root.user">
+                <a class="nav-link" href="#!/sign-in">
+                    <em class="fas fa-sign-in-alt"></em>&emsp;Ingresar
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main ng-view></main>
+
+<footer></footer>
