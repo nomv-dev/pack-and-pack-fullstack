@@ -17,5 +17,5 @@ appModule.config(['$routeProvider', function ($routeProvider) {
             controller   : 'UserController',
             controllerAs : 'app'
         })
-        .otherwise('/sign-in');
+        .otherwise('/user/search');
 }]);
